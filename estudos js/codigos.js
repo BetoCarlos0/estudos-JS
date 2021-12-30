@@ -48,6 +48,26 @@ const person = {
     weight: 88.6,
     isAdmin: true
 }
-
 console.log(person.name)
+
+====================================
+
+function createPhases() {
+    console.log("estudar é muito bom")
+    console.log("paciência e persistencia")
+    console.log("revisão é mãe do aprendizado")
+}
+createPhases()
+
+function expression
+ const sum = function(number1, number2){
+     console.log(number1 + number2)
+}
+const sum = function(number1, number2){
+    return number1 + number2
+}
+
+console.log(sum(4, 6))
+
+
 */

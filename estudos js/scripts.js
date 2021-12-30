@@ -1,5 +1,3 @@
-console.log('bem vindos ao stater')
-
 // let weight 
 // console.log(typeof weight)
 
