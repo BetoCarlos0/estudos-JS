@@ -69,5 +69,77 @@ const sum = function(number1, number2){
 
 console.log(sum(4, 6))
 
+const sum = function(number1, number2){
+    return number1 + number2
+}
+
+console.log(sum(4, 6))
+
+
+// função callback - chama outra função dentro de um função
+function sayMyName(name) {
+    console.log("antes de executar a função callback")
+
+    console.log(name())
+}
+
+sayMyName(
+    () => {
+        //console.log("estou em uma callback")
+
+        return "estou em uma callback"
+    }
+)
+
+
+function Person(name){
+    this.name = name
+    this.walk = function(){
+        return this.name + " está andando"
+    }
+}
+
+const beto = new Person("Beto")
+
+console.log(beto.walk())
+
+
+let number = 354.54654
+console.log(number.toFixed(2))
+let number2 = number.toFixed(2).replace(".", ",")
+console.log(Number(number))
+
+
+let frase = "tesde de js com visual studio code"
+console.log(frase.includes("code"))
+
+
+console.log(["a", "b", "c"].length)
+
+text = ["a", "b", function() { return "alo"}]
+console.log(text[2]())
+
+
+let word = "manipulação"
+console.log(Array.from(word))
+
+
+let names = ['pedro', 'joão', 'luiz']
+for(let char of names) {
+    console.log(char)
+}
+
+
+let person = {
+    name: 'beto',
+    age: 18,
+    weight: 100
+}
+for(let i in person) {
+    console.log(i)
+    console.log(person[i])
+}
+
+
 
 */
