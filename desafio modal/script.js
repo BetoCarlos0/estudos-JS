@@ -1,17 +1,14 @@
-const button = document.getElementById('openModal')
+const buttonOpen = document.getElementById('openModal')
 
-const modal = document.querySelector('modal-div')
+const modalWrapper = document.querySelector('.modal-wrapper')
 
-button.onclick = function(){
-    modal.classList.remove('invisible')
+buttonOpen.onclick = function(){
+    modalWrapper.classList.remove('invisible')
 }
 
 document.addEventListener('keydown', function(event) {
-    console.log(event)
-    const isESC = event.key === 'Escape'
 
-    if(isESC) {
-        modal.classList.add('invisible')
+    if(event.key  === 'Escape') {
+        modalWrapper.classList.add('invisible')
     }
 })
-
