@@ -1,0 +1,69 @@
+@keyframes itemHidden {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes sideBarRight{
+    from {
+        width: 75px;
+    }
+    to {
+        width: 250px;
+    }
+}
+
+@keyframes sideBarLeft{
+    from {
+        width: 250px;
+    }
+    to {
+        width: 75px;
+    }
+}
+#modal.sidebarOff input {
+    padding: 15px;
+}
+#modal.sidebarOff .logo svg:first-child {
+    animation-name: itemHidden;
+    animation-fill-mode: both;
+    animation-duration: .3s;
+}
+#modal.sidebarOff .logo svg:last-child{
+    right: 25px;
+}
+#modal.sidebarOff img, #modal.sidebarOff .userOut div {
+    animation-name: itemHidden;
+    animation-fill-mode: both;
+    animation-duration: .3s;
+}
+#modal.sidebarOff {
+    animation-name: sideBarLeft;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+#modal.sidebarOn {
+    animation-name: sideBarRight;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+.sidebarOff .userOut svg {
+    position: absolute;
+    right: 25px;
+}
+#modal.sidebarOff nav ul li a svg {
+    position: absolute;
+}
+#modal.sidebarOff nav ul li a p {
+    animation-name: itemHidden;
+    animation-fill-mode: both;
+    animation-duration: .3s;
+}
+
+#modal.sidebarOff ul li:hover {
+    opacity: 1;
+}

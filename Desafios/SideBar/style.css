@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+:root {
+    --body-bg-color: #dce4e3;
+    --green: #18c29c;
+    --light-green: #8ed7c6;
+    --light-grey: #dce4e3;
+    --text-color: #084236;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+}
+
+#modal {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: var(--green);
+    position: relative;
+}
+#modal .logo {
+    display: flex;
+}
+
+#modal .logo svg:last-child {
+    position: absolute;
+    right: 20px;
+}
+
+#modal input {
+    background-color: var(--light-green);
+    border: 0px;
+    padding: 15px 15px 15px 45px;
+    border-radius: 13px;
+    margin: 10px 10px 20px 10px;
+    outline-style: none;
+    background-image: url(./images/search.svg);
+    background-repeat: no-repeat;
+    background-position: 14px;
+}
+#modal input::before {
+    content: "Buscar";
+    left: 50px;
+}
+::placeholder {
+    color: var(--text-color);
+}
+#modal div:first-child {
+    margin: 20px 20px 10px 20px;
+}
+#modal nav {
+    flex: 1;
+    list-style: none;
+    padding: 0px 25px;
+}
+#modal nav ul {
+    list-style: none;
+}
+#modal nav ul li {
+    position: relative;
+}
+#modal nav ul li a {
+    position: relative;
+    display: flex;
+    margin: 0px 0px 20px 0px;
+    align-items: center;
+    text-decoration: none;
+}
+#modal nav ul li a p {
+    margin-left: 37px;
+}
+#modal nav ul li a svg {
+    position: absolute;
+}
+
+.userOut {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px 10px 10px;
+    align-items: center;
+    background-color: var(--light-green);
+}
+.userOut div {
+    padding: 0 8px;
+    flex: 1;
+    line-height: 0.9;
+}
+.userOut span {
+    font-size: 14px;
+}
+
+.userOut img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 12px;
+}
+.userOut svg {
+    position: absolute;
+    right: 20px;
+}
+.userOut svg, .logo svg, nav ul li {
+    cursor: pointer;
+}
+
+
+.dashboard {
+    flex: 1;
+    background-color: var(--body-bg-color);
+    padding: 20px;
+}
