@@ -78,10 +78,16 @@
     margin: 0;
 }
 
+.pokemons a {
+    cursor: pointer;
+    text-decoration: none;
+    margin: .5rem;
+}
+
 .pokemon {
     display: flex;
     flex-direction: column;
-    margin: .5rem;
+    
     padding: 1rem;
     border-radius: 1rem;
     color: #fff;
