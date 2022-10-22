@@ -1,53 +1,39 @@
-const params = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop),
-});
+const pokemonData = document.getElementById('pokemon-data');
+const pokemonStats = document.getElementById('stats');
 
-let id = params.id;
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id')
 
-function convertPokeApiDetailToPokemon(pokeDetail) {
-    const pokemon = new Pokemon()
-    pokemon.number = pokeDetail.id
-    pokemon.name = pokeDetail.name
-
-    const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
-    const [type] = types
-
-    pokemon.types = types
-    pokemon.type = type
-
-    const official_artwork = 'official-artwork'
-
-    pokemon.photo = pokeDetail.sprites.other['official-artwork'].front_default
-
-    return pokemon
-}
 
 function pokemonsConvert(pokemon) {
     return `
-    <div class="pokemon">
-        <div class="data">
-            <div class="details">
-                <h1 class="name">Bulbasaur</h1>
-                <ol class="types">
-                    <li class="type grass">tipos</li>
-                    <li class="type poison">tipos</li>
-                </ol>
-            </div>
-            <span class="number">#001</span>
+    <div class="data">
+        <div class="details">
+            <h1 class="name">${pokemon.name}</h1>
+            <ol class="types">
+                ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+            </ol>
         </div>
+        <span class="number">#${pokemon.number}</span>
     </div>
     `
 }
 
-// function loadPokemonItens() {
-//     pokeApi.getPokemonDetail().then((pokemons = []) => {
-//         const newHtml = pokemons.map(pokemonsConvert).join('')
-//         pokemonList.innerHTML += newHtml
-//     })
-// }
+function pokeStats(pokemon) {
+    return `
+    <tbody>
+        ${pokemon.stats.map((stat) => `<tr><td>${stat.name}</td><td>${stat.value}</td><td></td></tr>`).join('')}
+    </tbody>
+    `
+}
 
-const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-fetch(url)
-    .then((response) => response.json())
-    .then(convertPokeApiDetailToPokemon)
-    .catch((error) => console.log(error));
+function loadPokemon(id) {
+    pokeApi.getPokemon(id).then((pokemon = {}) => {
+        pokemonData.innerHTML = pokemonsConvert(pokemon)
+        pokemonStats.innerHTML = pokeStats(pokemon)
+
+        pokemonData.setAttribute('class', `pokemon ${pokemon.type}`)
+    })
+}
+
+loadPokemon(id);

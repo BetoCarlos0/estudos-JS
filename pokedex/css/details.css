@@ -89,7 +89,6 @@ body {
 
 .pokemon {
     color: #fff;
-    background-color: #76c850;
     padding: 1.4rem;
     text-align: center;
     position: relative;
@@ -182,7 +181,7 @@ ul.nav {
 
 .info tr td:first-child {
     color: rgba(0, 0, 0, 0.425);
-    width: 30%;
+    width: 40%;
 }
 
 .info tr td:nth-of-type(2) {
